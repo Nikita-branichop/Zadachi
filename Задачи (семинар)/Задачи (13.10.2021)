@@ -21,10 +21,10 @@ int main()
 {
     int year;
     cin >> year;
-    if (year % 4 == 0 && year % 400 == 0) {
-        cout << "This year is a leap";
+    if ((year % 100 != 0 && year % 4 == 0) || year % 400 == 0 ) {
+        cout << year << " is a leap year";
     }
-    else cout << "This year is a not leap";
+    else cout << year << " is not a leap year";
     return 0;
 }
 
