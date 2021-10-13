@@ -1,1 +1,31 @@
+//Zadacha 1///////////////////////////////////////////
 
+#include <iostream>
+using namespace std;
+int main()
+{
+    int digit;
+    cin >> digit;
+    if (digit % 2 == 0) {
+        cout << "Even number";
+    }
+    else cout << "Odd number";
+    return 0;
+}
+
+//Zadacha 2////////////////////////////////////////////
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int year;
+    cin >> year;
+    if (year % 4 == 0 && year % 400 == 0) {
+        cout << "This year is a leap";
+    }
+    else cout << "This year is a not leap";
+    return 0;
+}
+
+//Zadacha 3//////////////////////////////////////////////
