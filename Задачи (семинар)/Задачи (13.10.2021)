@@ -39,6 +39,77 @@ int main()
     cout << "a = "; cin >> a;
     cout << "b = "; cin >> b;
     cout << "c = "; cin >> c;
-    int x1 = -b + sqrt(pow(b, 2))
+    int x1 = (-b + sqrt(pow(b, 2) - 4 * a * c)) / 2 * a;
+    int x2 = (-b - sqrt(pow(b, 2) - 4 * a * c)) / 2 * a;
+    cout << "x1 = " << x1 << endl;
+    cout << "x2 = " << x2 << endl;
+    return 0;
+}
+
+//Zadacha 4///////////////////////////////////////////////
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main()
+{
+    double first_digit, second_digit;
+    string operation;
+    cout << "First digit = "; cin >> first_digit;
+    cout << "Second digit = "; cin >> second_digit;
+    cout << "Operation (+ , - , * , / ) "; cin >> operation;
+    if (operation == "+") {
+        cout << first_digit + second_digit;
+    } else if (operation == "-") {
+        cout << first_digit - second_digit;
+      } else if (operation == "*") {
+        cout << first_digit * second_digit;
+          } else if (operation == "/") {
+        cout << first_digit / second_digit;
+               } else cout << "Wrong";
+    return 0;
+}
+
+//Zadacha 5///////////////////////////////////////////////
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    char symbol;
+    int decimal;
+    cin >> symbol;
+    decimal = int(symbol);
+    if (decimal >= 97 && decimal <= 122) {
+        cout << "The upper case character corresponding to is ...";
+    }
+    else if (decimal >= 65 && decimal <= 90) {
+        cout << "The lower case character corresponding to is ...";
+    }
+    else cout << "is not a letter";
+    return 0;
+}
+
+//Zadacha 6////////////////////////////////////////////////
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    char symbol;
+    cin >> symbol;
+    int decimal, x; 
+    decimal = int(symbol);
+    if (decimal >= 97 && decimal <= 122) {
+        decimal = decimal - 32; cout << char(decimal);
+    }
+    else if (decimal >= 65 && decimal <= 90) {
+        decimal = decimal + 32; cout << char(decimal);
+    }
+    else if (decimal >= 48 && decimal <= 57) {
+        int digit = decimal - '0';
+        cout << digit * digit;
+    }
+    else cout << "Wrong";
     return 0;
 }
