@@ -96,7 +96,7 @@ int main()
 {
     char symbol;
     cin >> symbol;
-    int decimal, x; 
+    int decimal; 
     decimal = int(symbol);
     if (decimal >= 97 && decimal <= 122) {
         decimal = decimal - 32; cout << char(decimal);
