@@ -1,0 +1,141 @@
+//Task 0/////////////////////////////////////////////////////
+ 
+#include <iostream>
+using namespace std;
+int main()
+{
+    int first, second;
+    cout << " а = "; cin >> first;
+    cout << "b = "; cin >> second;
+    a = a + b; b = a - b; a = a - b;
+    cout << " a = " << first << endl;
+    cout << " b = " << second << endl;
+    return 0;
+}
+ 
+//Task 1/////////////////////////////////////////////////////
+ 
+#include <iostream>
+using namespace std;
+int main()
+{
+    int Num;
+    cin >> Num;
+    if (Num % 30 == 0) {
+    cout << "Can be divisible by 2, 3 and 5";
+    }
+    else cout << "Cannot be divisible by 2, 3 and 5";
+    return 0;
+}
+ 
+//Task 2///////////////////////////////////////////////////////
+ 
+#include <iostream>
+using namespace std;
+int main()
+{
+    int delitel, delimo;
+    cin >> delitel;
+    cin >> delimo;
+    if (delimo % delitel == 0) {
+        cout << "First digit is divisor";
+    }
+    else cout << "Second digit is not divisor";
+    return 0;
+}
+ 
+//Task 3////////////////////////////////////////////////////////
+ 
+#include <iostream>
+using namespace std;
+int main()
+{
+    int r;
+    const float Pi = 3.14;
+    cout << "r = "; cin >> r;
+    cout << "Perimetr = " << 2 * Pi * r << endl;
+    cout << "Area = " << Pi * r * r;
+    return 0;
+}
+ 
+//Task 4////////////////////////////////////////////////////////////
+ 
+#include <iostream>
+using namespace std;
+int main()
+{
+    int threeDigitNum, firstdigit, seconddigit, threedigit;
+    cout << "Въведи 3-цифрено число - "; cin >> threeDigitNum;
+    if (100 <= threeDigitNum and threeDigitNum <= 999) {
+        firstdigit = threeDigitNum / 100;
+        seconddigit = threeDigitNum / 10 % 10;
+        threedigit = threeDigitNum % 10;
+        cout << firstdigit << endl;
+        cout << seconddigit << endl;
+        cout << threedigit << endl;
+        cout << "Sum = " << firstdigit + seconddigit + threedigit;
+    }
+    else cout << "Number is not three digit";
+    return 0;
+ 
+//Task 5///////////////////////////////////////////////////////////////
+ 
+#include <iostream>
+using namespace std;
+int main()
+{
+    int threeDigitNum, firstDigit, secondDigit, threeDigit;
+    cin >> threeDigitNum;
+    if (100 <= threeDigitNum and threeDigitNum <= 999) {
+        firstDigit = threeDigitNum / 100;
+        secondDigit = threeDigitNum / 10 % 10;
+        threeDigit = threeDigitNum % 10;
+        bool check = (firstDigit != secondDigit and firstDigit != threeDigit and secondDigit != threeDigit);
+        cout << check;
+    }
+    else cout << "Number is not three digit";
+    return 0;
+}
+ 
+//Task 6/////////////////////////////////////////////////////////////////
+       
+#include <iostream>
+using namespace std;
+int main()
+{
+    int CordX, CordY;
+    float r;
+    cout << "x = "; cin >> CordX;
+    cout << "y = "; cin >> CordY;
+    cout << "r = "; cin >> r;
+    if (CordX * CordX + CordY * CordY <= r * r) {
+        cout << "Point is in circle";
+    }
+    else cout << "Point is not in circle";
+    return 0;
+}
+ 
+//Task 7/////////////////////////////////////////////////////////////////////
+     
+#include <iostream>
+using namespace std;
+int main()
+{
+    string Letter, a = "a", k = "k", c = "c";
+    double C, K, F;
+    cout << "F = "; cin >> F;
+    cout << "Letter a(Kalvin + Celsium), c (Celsium), k (Kalvin) - "; cin >> Letter;
+    C = (F - 32) * 5 / 9;
+    K = C + 273.15;
+    if (Letter == a) {
+        cout << "Celsium = " << round(C*100)/100 << ", Kalvin = " << round(K*100)/100;
+    }
+    else if (Letter == k) {
+        cout << "Kalvin = " << round(K*100)/100;
+    }
+    else if (Letter == c) {
+        cout << "Celsium = " << round(C*100)/100;
+    }
+    else cout << "Wrong letter";
+    return 0;
+}
