@@ -54,19 +54,17 @@ using namespace std;
 int main()
 {
     double first_digit, second_digit;
-    string operation;
+    char operation;
     cout << "First digit = "; cin >> first_digit;
     cout << "Second digit = "; cin >> second_digit;
     cout << "Operation (+ , - , * , / ) "; cin >> operation;
-    if (operation == "+") {
-        cout << first_digit + second_digit;
-    } else if (operation == "-") {
-        cout << first_digit - second_digit;
-      } else if (operation == "*") {
-        cout << first_digit * second_digit;
-          } else if (operation == "/") {
-        cout << first_digit / second_digit;
-               } else cout << "Wrong";
+    switch (operation) {
+    case '+': cout << first_digit + second_digit; break;
+    case '-': cout << first_digit - second_digit; break;
+    case '*': cout << first_digit * second_digit; break;
+    case '/': cout << first_digit / second_digit; break;
+    default: cout << "Wrong"; break;
+    }
     return 0;
 }
 
