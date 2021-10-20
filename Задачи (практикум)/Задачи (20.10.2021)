@@ -1,0 +1,185 @@
+//Zadacha 0////////////////////////////////////////
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    double first_digit, second_digit;
+    char operation;
+    cout << "First digit = "; cin >> first_digit;
+    cout << "Second digit = "; cin >> second_digit;
+    cout << "Operation (+ , - , * , / ) "; cin >> operation;
+    switch (operation) {
+    case '+': cout << first_digit + second_digit; break;
+    case '-': cout << first_digit - second_digit; break;
+    case '*': cout << first_digit * second_digit; break;
+    case '/': cout << first_digit / second_digit; break;
+    default: cout << "Wrong"; break;
+    }
+    return 0;
+}
+
+//Zadacha 1//////////////////////////////////////////
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    char symbol;
+    int decimal;
+    cin >> symbol;
+    decimal = int(symbol);
+    if (decimal >= 97 && decimal <= 122) {
+        cout << "The upper case character corresponding to is ...";
+    }
+    else if (decimal >= 65 && decimal <= 90) {
+        cout << "The lower case character corresponding to is ...";
+    }
+    else cout << "is not a letter";
+    return 0;
+}
+
+//Zadacha 2//////////////////////////////////////////////
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int month;
+    cin >> month;
+    switch (month) {
+    case 12: 
+    case 1: 
+    case 2: 
+        cout << "Winter"; break;
+    case 3: 
+    case 4: 
+    case 5:
+        cout << "Spring"; break;
+    case 6:
+    case 7: 
+    case 8: 
+        cout << "Summer"; break;
+    case 9: 
+    case 10: 
+    case 11: 
+        cout << "Autumn"; break;
+    default: cout << "Invalid month!"; break;
+    }
+    return 0;
+}
+
+//Zadacha 3///////////////////////////////////////////////
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    double a, b;
+    cin >> a >> b;
+    int x = -b / a;
+    if (a == 0 && b == 0) {
+        cout << "INF";
+    }
+    else if (a != 0 && b != 0 && x == 0) {
+        cout << "NO";
+    }
+    else cout << x;
+}
+
+//Zadacha 4////////////////////////////////////////////////
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int month, year;
+    cin >> month >> year;
+    switch (month) {
+    case 1:
+    case 3:
+    case 5:
+    case 7:
+    case 8:
+    case 10:
+    case 12:
+        cout << "31"; break;
+    case 4:
+    case 6:
+    case 9:
+    case 11:
+        cout << "30";
+    case 2: if ((year % 100 != 0 && year % 4 == 0) || year % 400 == 0) {
+        cout << "29";
+    }
+          else cout << "28";
+        break;
+    default: cout << "Wrong month"; break;
+    }
+    return 0;
+}
+
+//Zadacha 5//////////////////////////////////////////////////
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main()
+{
+    int a, b, c;
+    cin >> a >> b >> c;
+    int D = b * b - 4 * a * c;
+    if (D > 0) {
+        double x1 = (-b + sqrt(D)) / 2 * a; 
+        double x2 = (-b - sqrt(D)) / 2 * a;
+        cout << "x1 = " << x1 << endl; 
+        cout << "x2 = " << x2;
+    }
+    if (D == 0) {
+        double x = -b / 2 * a;
+        cout << "x1 = x2 = " << x;
+    }
+    if (D < 0) {
+        cout << "No solution!";
+    }
+    return 0;
+}
+
+//Zadacha 6////////////////////////////////////////////////////
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    char symbol;
+    cin >> symbol;
+    int decimal;
+    decimal = int(symbol);
+    if (decimal >= 97 && decimal <= 122) {
+        cout << symbol << " is a lowercase letter";
+    }
+    else if (decimal >= 65 && decimal <= 90) {
+        cout << symbol << " is an uppercase letter";
+    }
+    else cout << symbol << " is a special symbol";
+    return 0;
+}
+
+//Zadacha 7//////////////////////////////////////////////////////
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int fourDigitNumber;
+    cin >> fourDigitNumber;
+    int firstDigit = fourDigitNumber / 1000;
+    int secondDigit = fourDigitNumber / 100 % 10;
+    int thirdDigit = fourDigitNumber / 10 % 10;
+    int fourthDigit = fourDigitNumber % 10;
+    bool check = (firstDigit % 2 == 1 && (firstDigit > secondDigit && firstDigit > thirdDigit && firstDigit > fourthDigit));
+    cout << boolalpha << check;
+    return 0;
+}
+
+//Zadacha 8////////////////////////////////////////////////////////
