@@ -110,3 +110,25 @@ int main()
 
 //Zadacha 5//////////////////////////////////////////////////////
 
+#include <iostream>
+using namespace std;
+int main()
+{
+    char symbol1, symbol2;
+    int digit;
+    int n;
+    cout << "Enter n - "; cin >> n;
+    cout << "Enter a symbol 1 - "; cin >> symbol1;
+    cout << "Enter a symbol 2 - "; cin >> symbol2;
+    for (int row = 0; row < n-1; row++) {
+        cout << symbol1;
+        for (int colA = 0; colA < row; colA++) {
+            cout << symbol1;
+        }
+        for (int colB = n - 1; colB > row; colB--) {
+            cout << symbol2;
+        }
+        cout << endl;
+    }
+    return 0;
+}
