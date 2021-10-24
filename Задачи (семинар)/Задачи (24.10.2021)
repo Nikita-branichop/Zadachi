@@ -1,0 +1,112 @@
+//Zadacha 0///////////////////////////////////////
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int digit;
+    cin >> digit;
+    switch (digit) {
+    case 6:
+    case 8:
+    case 10:
+    case 12:
+    case 14:
+    case 16:
+    case 18:
+    case 20:
+        cout << "Even"; break;
+    case 5:
+    case 7:
+    case 9:
+    case 11:
+    case 13:
+    case 15:
+    case 17:
+    case 19:
+        cout << "Odd"; break;
+    default: cout << "Wrong digit"; break;
+    }
+    return 0;
+}
+
+//Zadacha 1///////////////////////////////////////////
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int threeDigitNumber;
+    cin >> threeDigitNumber;
+    int fstDigit = threeDigitNumber / 100;
+    int secDigit = threeDigitNumber / 10 % 10;
+    int thrDigit = threeDigitNumber % 10;
+    if (fstDigit * secDigit * thrDigit >= 100 && fstDigit * secDigit * thrDigit <= 999) {
+        cout << "YES " << (fstDigit * secDigit * thrDigit) - (fstDigit + secDigit + thrDigit);
+    }
+    else cout << "NO " << fstDigit * secDigit * thrDigit;
+    return 0;
+}
+
+//Zadacha 2//////////////////////////////////////////////
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int i;
+    int sum = 0, digit;
+    for (i = 0; i <= 9; i++) {
+        cout << "Write a digit = "; cin >> digit;
+        if (digit >= 10 && digit <= 5555) {
+            sum = sum + digit;
+        }
+        else {
+            cout << "Wrong number" << endl;
+            i--;
+        }
+    }
+    cout << "Sum = " << sum << endl;
+    return 0;
+}
+
+//Zadacha 3/////////////////////////////////////////////////
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int i = 0, i1;
+    cout << "How many numbers you will write? - "; cin >> i1;
+    int max = 0;
+    int digit;
+    while (i <= (i1 - 1)) {
+        cout << "Write a digit - "; cin >> digit;
+        i++;
+        if (max < digit) {
+            max = digit;
+        }
+    }
+    cout << "The largest number is " << max;
+    return 0;
+}
+
+//Zadacha 4////////////////////////////////////////////////////
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n;
+    int faktoriel = 1;
+    cin >> n;
+    while (n != 1) {
+        faktoriel *= n;
+        n--;
+    }
+    cout << faktoriel;
+    return 0;
+}
+
+//Zadacha 5//////////////////////////////////////////////////////
+
