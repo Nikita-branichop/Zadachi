@@ -183,3 +183,27 @@ int main()
 }
 
 //Zadacha 8////////////////////////////////////////////////////////
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int tomatoes, peppers, carrots, olives, potatoes, flavoring;
+    cout << "Tomatoes - "; cin >> tomatoes;
+    cout << "Peppers - "; cin >> peppers;
+    cout << "Carrots - "; cin >> carrots;
+    cout << "Olives - "; cin >> olives;
+    cout << "Potatoes - "; cin >> potatoes;
+    cout << "Flavoring (mg) - "; cin >> flavoring;
+    bool check1 = (tomatoes >= 1 && peppers >= 2 && carrots >= 4 && olives >= 3 && potatoes >= 3 && flavoring >= 150);
+    bool check2 = (tomatoes >= 2 && peppers >= 3 && carrots >= 5 && olives >= 6 && potatoes >= 10 && flavoring >= 200);
+    bool check3 = (tomatoes >= 5 && peppers >= 6 && carrots >= 12 && olives >= 7 && potatoes >= 12 && flavoring >= 300);
+    int checkAll = check1 + check2 + check3;
+    switch (checkAll) {
+    case 1: cout << "Trajcho can make a student salat"; break;
+    case 2: cout << "Trajcho can make a student soup and need a friend for help"; break;
+    case 3: cout << "Trajcho can make a student casserole and need a friend for help"; break;
+    default: cout << "Not enought ingredients"; break;
+    }
+    return 0;
+}
