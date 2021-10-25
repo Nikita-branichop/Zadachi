@@ -200,10 +200,10 @@ int main()
     bool check3 = (tomatoes >= 5 && peppers >= 6 && carrots >= 12 && olives >= 7 && potatoes >= 12 && flavoring >= 300);
     int checkAll = check1 + check2 + check3;
     switch (checkAll) {
-    case 1: cout << "Trajcho can make a student salat"; break;
-    case 2: cout << "Trajcho can make a student soup and need a friend for help"; break;
-    case 3: cout << "Trajcho can make a student casserole and need a friend for help"; break;
-    default: cout << "Not enought ingredients"; break;
+        case 1: cout << "Trajcho can make a student salat"; break;
+        case 2: cout << "Trajcho can make a student salat or Trajcho can make a student soup and need a friend for help"; break;
+        case 3: cout << "Trajcho can make a student salat or Trajcho can make a student soup and need a friend for help or Trajcho can make a student casserole and need a friend for help"; break;
+        default: cout << "Not enought ingredients"; break;
     }
     return 0;
 }
