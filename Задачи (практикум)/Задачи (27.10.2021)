@@ -1,0 +1,142 @@
+//Zadacha 0///////////////////////////////////////////////
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int a;
+    int n;
+    int result = 1;
+    cin >> a >> n;
+    for (int i = 0; i < n; ++i)
+    {
+        result *= a;
+    }
+    cout << result;
+    return 0;
+}
+
+//Zadacha 1/////////////////////////////////////////////////
+
+#include <iostream>
+using namespace std;
+int main()
+{
+	int n, Nfactorial = 1;
+	cin >> n;
+	for (int i = 1; i <= n; i++)
+	{
+		Nfactorial *= i;
+	}
+
+	cout << Nfactorial << endl;
+	return 0;
+}
+
+//Zadacha 2/////////////////////////////////////////////////////
+
+#include <iostream>
+using namespace std;
+int main()
+{
+	int i;
+	cin >> i;
+	for (int n = 0; n <= i; ++n)
+	{
+		int ai = n * n + 3 * n;
+		cout << ai << " ";
+	}
+
+	return 0;
+}
+
+//Zadacha 3///////////////////////////////////////////////////////
+
+#include <iostream>
+using namespace std;
+int main ()
+{
+		int n, number, current_negative_number = INT_MIN;
+		cin >> n;
+		for (int i = 0; i < n; ++i) {
+			cin >> number;
+			if (number < 0 && number > current_negative_number) {
+				current_negative_number = number;
+			}
+
+		}
+		cout << current_negative_number << endl;
+	return 0;
+}
+
+//Zadacha 4/////////////////////////////////////////////////////////
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int number, digit;
+    int sum = 0;
+    cin >> number;
+    while (number != 0) {
+        digit = number % 10;
+        number /= 10;
+        sum += digit;
+    }
+    cout << sum;
+    return 0;
+}
+
+//Zadacha 5//////////////////////////////////////////////////////////
+
+#include <iostream>
+using namespace std;
+int main() {
+	int num, sum = 0;
+	cin >> num;
+	while (num != 0) {
+		sum += num;
+		cin >> num;
+	}
+	cout << sum;
+	return 0;
+}
+
+//Zadacha 6////////////////////////////////////////////////////////////
+
+#include <iostream>
+using namespace std;
+int main() {
+    int n, result = 1;
+    int a = 1, b = 1;
+    cin >> n;
+    for (int i = 0; i < n; i++) {
+        if (i == 1 || i == 2) {
+            continue;
+        }
+        result = a + b;
+        a = b;
+        b = result;
+    }
+    cout << result << endl;
+    return 0;
+}
+
+//Zadacha 7///////////////////////////////////////////////////////////////
+
+#include <iostream>
+using namespace std;
+int main()
+{
+	int a, b, result = 1;
+	cin >> a >> b;
+	for (int i = a; i <= b; ++i) {
+		result *= i;
+
+	}
+	cout << result;
+	return 0;
+}
+
+//Zadacha 8///////////////////////////////////////////////////////////////
+
