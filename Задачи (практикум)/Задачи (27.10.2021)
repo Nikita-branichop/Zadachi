@@ -108,17 +108,21 @@ int main() {
 using namespace std;
 int main() {
     int n, result = 1;
-    int a = 1, b = 1;
+    int a = 0, b = 1;
     cin >> n;
-    for (int i = 0; i < n; i++) {
-        if (i == 1 || i == 2) {
-            continue;
+    if (n > -1) {
+        switch (n) {
+        case 0: cout << "0"; break;
+        case 1: cout << "1"; break;
+        default: for (int i = 1; i < n; i++) {
+            result = a + b;
+            a = b;
+            b = result;
         }
-        result = a + b;
-        a = b;
-        b = result;
+               cout << result << endl;
+        }
     }
-    cout << result << endl;
+    else cout << "Wrong";
     return 0;
 }
 
@@ -132,7 +136,6 @@ int main()
 	cin >> a >> b;
 	for (int i = a; i <= b; ++i) {
 		result *= i;
-
 	}
 	cout << result;
 	return 0;
@@ -141,24 +144,19 @@ int main()
 //Zadacha 8///////////////////////////////////////////////////////////////
 
 #include <iostream>
+#include <cmath>
 using namespace std;
 int main()
 {
-    char symbol1, symbol2;
-    int digit;
-    int n;
-    cout << "Enter n - "; cin >> n;
-    cout << "Enter a symbol 1 - "; cin >> symbol1;
-    cout << "Enter a symbol 2 - "; cin >> symbol2;
-    for (int row = 0; row < n-1; row++) {
-        for (int colA = -1; colA < row; colA++) {
-            cout << symbol1;
+    int number;
+    cin >> number;
+    for (int i = 2; i < sqrt(number); i++) {
+        if (number % i == 0) {
+            cout << "Chisloto ne e prosto";
+            return 0;
         }
-        for (int colB = n - 1; colB > row; colB--) {
-            cout << symbol2;
-        }
-        cout << endl;
     }
+    cout << "Chisloto e prosto";
     return 0;
 }
 
