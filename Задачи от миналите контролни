@@ -1,0 +1,71 @@
+//Zadacha 1//////////////////////////////////////////////////
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int tomatoes, peppers, carrots, olives, potatoes, flavoring;
+    cout << "Tomatoes - "; cin >> tomatoes;
+    cout << "Peppers - "; cin >> peppers;
+    cout << "Carrots - "; cin >> carrots;
+    cout << "Olives - "; cin >> olives;
+    cout << "Potatoes - "; cin >> potatoes;
+    cout << "Flavoring (mg) - "; cin >> flavoring;
+    bool check1 = (tomatoes >= 1 && peppers >= 2 && carrots >= 4 && olives >= 3 && potatoes >= 3 && flavoring >= 150);
+    bool check2 = (tomatoes >= 2 && peppers >= 3 && carrots >= 5 && olives >= 6 && potatoes >= 10 && flavoring >= 200);
+    bool check3 = (tomatoes >= 5 && peppers >= 6 && carrots >= 12 && olives >= 7 && potatoes >= 12 && flavoring >= 300);
+    int checkAll = check1 + check2 + check3;
+    switch (checkAll) {
+        case 1: cout << "Trajcho can make a student salat"; break;
+        case 2: cout << "Trajcho can make a student salat or Trajcho can make a student soup and need a friend for help"; break;
+        case 3: cout << "Trajcho can make a student salat or Trajcho can make a student soup and need a friend for help or Trajcho can make a student casserole and need a friend for help"; break;
+        default: cout << "Not enought ingredients"; break;
+    }
+    return 0;
+}
+
+//Zadacha 2///////////////////////////////////////////////////////
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int money, usb, ram, ssd;
+    cout << "Price of laptop - "; cin >> money;
+    cout << "USB - "; cin >> usb;
+    cout << "RAM - "; cin >> ram;
+    cout << "SSD (1) or (0) - "; cin >> ssd;
+    bool check((usb >= 3 && ram >= 8 && ssd == 1 && money < 1500)
+        || (usb >= 3 && ram < 8 && ssd == 0 && money < 800));
+    cout << (check ? ("Yes") : ("No"));
+    return 0;
+}
+
+//Zadacha 3///////////////////////////////////////////////////////////
+
+#include <iostream>
+using namespace std;
+int main() {
+	int number, digit1, digit2, i;
+	bool flag = true;
+	cin >> number;
+	while (number != 0) 
+	{
+		digit1 = number % 10;
+		number = number / 10;
+		i = number;
+		do
+		{
+			digit2 = i % 10;
+			i /= 10;
+			if (digit1 == digit2) {
+				flag = false; break;
+			}
+		} while (i != 0);
+	}
+	cout << (flag ? "YES" : "NO");
+	return 0;
+}
+
+//Zadacha 4//////////////////////////////////////////////////////////////
+
