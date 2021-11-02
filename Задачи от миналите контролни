@@ -69,3 +69,46 @@ int main() {
 
 //Zadacha 4//////////////////////////////////////////////////////////////
 
+#include <iostream>
+using namespace std;
+int main()
+{
+    int fourDigitNumber;
+    cin >> fourDigitNumber;
+    if (fourDigitNumber > 999 && fourDigitNumber < 10000) {
+        int firstDigit = fourDigitNumber / 1000;
+        int secondDigit = fourDigitNumber / 100 % 10;
+        int thirdDigit = fourDigitNumber / 10 % 10;
+        int fourthDigit = fourDigitNumber % 10;
+        bool check = (firstDigit % 2 == 1 && (firstDigit > secondDigit && firstDigit > thirdDigit && firstDigit > fourthDigit));
+        cout << boolalpha << check;
+    }
+    else cout << "Wrong digit";
+    return 0;
+}
+
+//Zadacha 5/////////////////////////////////////////////////////////////////
+
+#include<iostream>
+using namespace std;
+int main()
+{
+    int number, digit = 0, the_biggest_sum = 1, sum = 0;
+    cin >> number;
+    while (number != 0) {
+        digit = number % 2;
+        number /= 2;
+        if (digit == 1) {
+            sum += 1;
+            if (sum > the_biggest_sum) {
+                the_biggest_sum = sum;
+            }
+        }
+        else sum = 0;
+    }
+    cout << the_biggest_sum;
+    return 0;
+}
+
+//Zadacha 6/////////////////////////////////////////////////////////////////////
+
