@@ -37,7 +37,7 @@ int main()
     cout << "RAM - "; cin >> ram;
     cout << "SSD (1) or (0) - "; cin >> ssd;
     bool check((usb >= 3 && ram >= 8 && ssd == 1 && money >= 1000 && money <= 1500)
-        || (usb >= 3 && ram < 8 && ssd == 0 && money < 800));
+        || (usb >= 3 && (ram < 8 || ssd == 0) && money < 800));
     cout << (check ? ("Yes") : ("No"));
     return 0;
 }
