@@ -149,3 +149,38 @@ int main()
 
 //Zadacha 7///////////////////////////////////////////////////////////////////////
 
+#include <iostream>
+using namespace std;
+int main() 
+{
+    int n, digit = 0, digit1;
+    cin >> n;
+    digit1 = n;
+    if (n > 0 && n < 101) {
+        for (int i = 0; i < n; i++) {
+            for (int i1 = 0; i1 < i; i1++) {
+                cout << " ";
+            }
+            for (int i2 = n; i2 > i; i2--) {
+                digit += 1;
+                cout << digit;
+            }
+            digit = i + 1;
+            cout << endl;
+        }
+        for (int i3 = 1; i3 < n; i3++) {
+            for (int i4 = n - 1; i4 > i3; i4--)
+                cout << " ";
+            digit1 -= i3+1;
+            for (int i5 = 0; i5 < i3+1; i5++) {
+                digit1 += 1;
+                cout << digit1;
+            }
+            cout << endl;
+        }
+    }
+    else cout << "Wrong number";
+    return 0;
+}
+
+//Zadacha 8/////////////////////////////////////////////////////////////////////////
