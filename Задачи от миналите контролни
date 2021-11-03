@@ -30,7 +30,8 @@ int main()
 using namespace std;
 int main()
 {
-    int money, usb, ram, ssd;
+    int usb, ram, ssd;
+    double money;
     cout << "Price of laptop - "; cin >> money;
     cout << "USB - "; cin >> usb;
     cout << "RAM - "; cin >> ram;
