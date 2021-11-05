@@ -105,3 +105,58 @@ int main()
     else cout << "Wrong number";
     return 0;
 }
+
+//Zadacha 3 /////////////////////////////////////////////////////////
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int num;
+    cin >> num;
+    int lenght = num * 3 - 2;
+    int temp = lenght;
+    if (num > 1) {
+        for (int i = 1; i < num; i++) {
+            for (int i1 = 1; i1 <= i; i1++) {
+                cout << i1;
+            }
+            for (int i2 = 1; i2 <= temp; i2++) {
+                cout << " ";
+            }
+            for (int i3 = i; i3 >= 1; i3--) {
+                cout << i3;
+            }
+            temp = temp - 2;
+            cout << endl;
+        }
+        temp += 2;
+        for (int k = 1; k <= num * 3; k++) {
+            if (k <= num) {
+                cout << k;
+            }
+            if (k > num && k <= num * 2) {
+                cout << "-";
+            }
+        }
+        for (int k1 = num; k1 >= 1; k1--) {
+            cout << k1;
+        }
+        cout << endl;
+        for (int j = num; j > 1; j--) {
+            for (int j1 = 1; j1 < j; j1++) {
+                cout << j1;
+            }
+            for (int j2 = 1; j2 <= temp; j2++) {
+                cout << " ";
+            }
+            temp += 2;
+            for (int j3 = j - 1; j3 >= 1; j3--) {
+                cout << j3;
+            }
+            cout << endl;
+        }
+    }
+    else cout << "Wrong number";
+    return 0;
+}
