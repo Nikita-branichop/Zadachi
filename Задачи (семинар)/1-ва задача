@@ -194,3 +194,114 @@ int main()
 }
 
 //Zadacha 5//////////////////////////////////////////////////////////////
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int num;
+    cin >> num;
+    if (num > 2) {
+        for (int j = 1; j <= num; j++) {
+            for (int j1 = 1; j1 <= 2 * num + 1; j1++) {
+                if (j1 > num - j + 1 && j1 < num + j + 1) {
+                    cout << "*";
+                }
+                else cout << " ";
+            }
+            cout << endl;
+        }
+        for (int i = 1; i <= num / 2; i++) {
+            for (int i1 = 1; i1 <= num + 1; i1++) {
+                if (i1 == num + 1) {
+                    cout << "*";
+                }
+                else cout << " ";
+            }
+            cout << endl;
+        }
+    }
+    else cout << "Wrong number";
+    return 0;
+}
+
+//Zadacha 6/////////////////////////////////////////////////////////////////////
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int a, b, sum = 0, multiply = 1, check = 0, temp;
+    cin >> a >> b;
+    for (int i = a; i <= b; i++) {
+        temp = i;
+        while (temp != 0) {
+            int digit = temp % 10;
+            temp /= 10;
+            sum += digit;
+            multiply *= digit;
+        }
+            if (sum == multiply) {
+                check++;
+            }
+            sum = 0;
+            multiply = 1;
+    }
+    cout << check;
+    return 0;
+}
+
+//Zadacha 7///////////////////////////////////////////////////////////////////////////
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n, k, x = 0, temp;
+    cin >> n >> k;
+    temp = k;
+    while (temp <= n) {
+        temp *= k;
+        x++;
+    }
+    cout << x;
+    return 0;
+}
+
+//Zadacha 8///////////////////////////////////////////////////////////////////////////////
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n, k, digit1, digit2, temp_k, temp_n, num_digits_k = 0, num_overlap = 0;
+    bool check = false;
+    cin >> n;
+    cin >> k;
+    temp_k = k;
+    temp_n = n;
+    if (k != 0) {
+        while (temp_k != 0) {
+            temp_k /= 10; num_digits_k++;
+        }
+        temp_k = k;
+        while (temp_n != 0){
+            digit1 = temp_n % 10;
+            temp_n /= 10;
+            digit2 = temp_k % 10;
+            if (digit1 == digit2) {
+                num_overlap++;
+                temp_k /= 10;
+                if (num_overlap == num_digits_k) {
+                    check = true;
+                }
+            }
+            else {
+                if (num_overlap != 0) temp_n = temp_n * 10 + digit1;
+                temp_k = k; num_overlap = 0;
+            }
+        }
+    }
+    cout << boolalpha << check;
+    return 0;
+}
