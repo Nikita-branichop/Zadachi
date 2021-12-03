@@ -1,0 +1,129 @@
+#include <iostream>
+using namespace std;
+
+void newNum(int num, int digit) {
+	int lastDigit;
+	int counter = 1;
+	int newnumber = 0;
+	while (num != 0) {
+		lastDigit = (num % 10 + digit) % 10;
+		newnumber += lastDigit * counter;
+		counter *= 10; num /= 10;
+	}
+	cout << newnumber;
+}
+
+int main()
+{
+	int num, digit;
+	cin >> num >> digit;
+	newNum(num, digit);
+	return 0;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#include <iostream>
+#include <time.h>
+#include <stdlib.h>
+#include <stdio.h>
+using namespace std;
+
+void generate_combination() {
+	srand(time(NULL));
+	int j = 0;
+	bool check_1 = false; bool check_2 = false; bool check_3 = false;
+	bool check_4 = false; bool check_5 = false; bool check_6 = false;
+	while (check_1 == 0 || check_2 == 0 || check_3 == 0 || check_4 == 0 || check_5 == 0 || check_6 == 0) {
+		int five_attempts = 0, counter = 1;
+		int temp;
+		
+		while (five_attempts < 9999) {
+			int digit = rand() % 10 + 1;
+			if (digit < 7 && digit > 0) {
+				five_attempts += counter * digit;
+				counter *= 10;
+			}
+		}
+
+		int arr[200];
+		arr[j] = five_attempts; cout << arr[j] << " "; j++;
+
+		// Check digit 1
+		temp = five_attempts; int counter_for_one = 0;
+		if (check_1 == 0) {
+			while (temp != 0) {
+				int digit = temp % 10;
+				temp /= 10;
+				if (digit == 1) { counter_for_one++; }
+			}
+			if (counter_for_one == 3) { check_1 = 1; }
+		}
+
+		//Check digit 2
+		temp = five_attempts; int counter_for_two = 0;
+		if (check_2 == 0) {
+			while (temp != 0) {
+				int digit = temp % 10;
+				temp /= 10;
+				if (digit == 2) { counter_for_two++; }
+			}
+			if (counter_for_two == 3) { check_2 = 1; }
+		}
+
+		//Check digit 3
+		temp = five_attempts; int counter_for_three = 0;
+		if (check_3 == 0) {
+			while (temp != 0) {
+				int digit = temp % 10;
+				temp /= 10;
+				if (digit == 3) { counter_for_three++; }
+			}
+			if (counter_for_three == 3) { check_3 = 1; }
+		}
+
+		//Check digit 4
+		temp = five_attempts; int counter_for_four = 0;
+		if (check_4 == 0) {
+			while (temp != 0) {
+				int digit = temp % 10;
+				temp /= 10;
+				if (digit == 4) { counter_for_four++; }
+			}
+			if (counter_for_four == 3) { check_4 = 1; }
+		}
+
+		//Check digit 5
+		temp = five_attempts; int counter_for_five = 0;
+		if (check_5 == 0) {
+			while (temp != 0) {
+				int digit = temp % 10;
+				temp /= 10;
+				if (digit == 5) { counter_for_five++; }
+			}
+			if (counter_for_five == 3) { check_5 = 1; }
+		}
+
+		//Check digit 6
+		temp = five_attempts; int counter_for_six = 0;
+		if (check_6 == 0) {
+			while (temp != 0) {
+				int digit = temp % 10;
+				temp /= 10;
+				if (digit == 6) { counter_for_six++; }
+			}
+			if (counter_for_six == 3) { check_6 = 1; }
+		}
+	}
+	cout << endl;
+	cout << "You need to make " << j << " throws!";
+}
+
+
+int main()
+{
+	generate_combination();
+	return 0;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
