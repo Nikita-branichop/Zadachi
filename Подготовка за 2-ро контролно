@@ -127,3 +127,63 @@ int main()
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#include <iostream>
+using namespace std;
+
+void remove_digit(int arr[128], int size, int digit) {
+	for (int i = 0; i < size; i++) {
+		if (arr[i] == digit) {
+			for (int j = i; j < size - 1; j++) {
+				arr[j] = arr[j + 1];
+			}
+			i--; size--;
+		}
+	}
+	for (int i = 0; i < size; i++) {
+		cout << arr[i] << " ";
+	}
+}
+
+int main()
+{
+	int arr[128], size, digit;
+	cin >> size;
+	for (int i = 0; i < size; i++) {
+		cin >> arr[i];
+	}
+	cin >> digit;
+	remove_digit(arr, size, digit);
+	return 0;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#include <iostream>
+using namespace std;
+
+void remove_digit(int arr[128], int size, int digit) {
+	for (int i = 0; i < size; i++) {
+		if (arr[i] == digit) {
+			for (int j = i; j < size - 1; j++) {
+				arr[j] = arr[j + 1];
+			}
+			i--; size--;
+		}
+	}
+	for (int i = 0; i < size; i++) {
+		cout << arr[i] << " ";
+	}
+}
+
+int main()
+{
+	int arr[128], size, digit;
+	cin >> size;
+	for (int i = 0; i < size; i++) {
+		cin >> arr[i];
+	}
+	cin >> digit;
+	remove_digit(arr, size, digit);
+	return 0;
+}
