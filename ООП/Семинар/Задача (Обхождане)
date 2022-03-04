@@ -1,1 +1,74 @@
+/* Да се напише програма, която по зададено число N печата като резултат първите N^2
+   естествени числа в следния ред (описан с пример):
+   При N = 5:
+    1    2    3    4    5
+   16   15   14   13    6
+   17   18   19   12    7
+   24   23   20   11    8
+   25   22   21   10    9
+*/
 
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+void doReplenishment(int** matrix, int num, int n, int red, int colona) {
+	
+	if (num == n * n || num > n*n) { matrix[n - 1][0] = n * n; return; }
+
+	while (matrix[red][colona] == 0) {
+		matrix[red][colona] = num; num++; colona++;
+	}
+
+	red++; colona--;
+
+	while (red < n) {
+		matrix[red][colona] = num; num++; red++;
+	}
+
+	colona--; red--;
+
+	while (matrix[red][colona] == 0) {
+		matrix[red][colona] = num; red--; num++;
+	}
+
+	red++; num--;
+
+	while (colona >= 0) {
+		matrix[red][colona] = num; num++; colona--;
+	}
+
+	doReplenishment(matrix, num, n, red + 1, colona + 1);
+}
+
+int** doMatrix(int N) {
+	int** matrix = new int*[N];
+	for (int i = 0; i < N; i++) {
+		matrix[i] = new int[N];
+	}
+	for (int i = 0; i < N; i++) {
+		for (int j = 0; j < N; j++) {
+			matrix[i][j] = 0;
+		}
+	}
+    doReplenishment (matrix, 1, N, 0, 0);
+	return matrix;
+}
+
+int main() 
+{
+	int N; cin >> N;
+	if (N > 100) { cout << "So big"; return 0; }
+	int** answer = doMatrix(N);
+
+	for (int i = 0; i < N; i++) {
+		for (int j = 0; j < N; j++) {
+			cout << setw(5) << answer[i][j];
+		}
+		cout << endl;
+		delete[]answer[i];
+	}
+	delete[] answer;
+	return 0;
+}
